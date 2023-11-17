@@ -11,44 +11,37 @@ struct Consentration {
     
     private (set) var cards = [Card]()
     
+    public var calculateScore = 0
+    
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         
         get {
-            var foundIndex: Int?
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    if foundIndex == nil {
-                        foundIndex = index
-                    } else {
-                        return nil
-                    }
-                    
-                }
-            }
-            return foundIndex
+            return cards.indices.filter {cards[$0].isFaceUp}.oneAndOnly
         }
         
-        set{
+        set {
             for index in cards.indices {
                 cards[index].isFaceUp = (index == newValue)
             }
         }
     }
     
-    mutating func chooseCard(at index: Int) {
-        assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)): choosen index not in the cards")
+    mutating func chooseCard(at index: Int){
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
+                    calculateScore += 2
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                }
+                else {
+                    calculateScore -= 1
                 }
                 cards[index].isFaceUp = true
             } else {
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
-        
     }
     
     init(numberOfPairsOfCards: Int) {
@@ -57,6 +50,16 @@ struct Consentration {
             let card = Card()
             cards += [card, card]
         }
+        shuffleCards()
+    }
+    
+    mutating func shuffleCards() {
         cards.shuffle()
+    }
+}
+
+extension Collection {
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }

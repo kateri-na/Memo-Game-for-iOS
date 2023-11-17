@@ -13,8 +13,26 @@ class ViewController: UIViewController {
     
     private (set) var flipCount = 0 {
         didSet{
-            flipCountLabel.text = "Flips: \(flipCount)"
+            updateFlipCountLabel()
         }
+    }
+    
+    private func updateFlipCountLabel () {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: UIColor.purple
+        ]
+        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+        flipCountLabel.attributedText = attributedString
+    }
+    
+    private func updateFlipScoreLabel(){
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth: 5.0,
+            .strokeColor: UIColor.magenta
+        ]
+        let attributedString = NSAttributedString(string: "Score: \(game.calculateScore)", attributes: attributes)
+        flipScore.attributedText = attributedString
     }
     
     var numberOfPairesOfCards: Int {
@@ -23,18 +41,27 @@ class ViewController: UIViewController {
     
     @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBOutlet private weak var flipCountLabel: UILabel!
+    @IBOutlet weak var flipCountLabel: UILabel! {
+        didSet {
+            updateFlipCountLabel()
+        }
+    }
     
-    private var emojiChoices = ["🐶", "🐣", "🐭", "🦊", "🐼", "🐹"]
+    @IBOutlet weak var flipScore: UILabel!{
+        didSet {
+            updateFlipScoreLabel()
+        }
+    }
     
-    private var emoji = [Int: String] ()
+    private var emojiChoices = "🐶🐣🐭🦊🐼🐹"
+    
+    private var emoji = [Card: String] ()
         
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount+=1
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
-            //flipCard(withEmoji: emojiChoices[cardNumber], on: sender)
         } else {
             print ("Your card out of range")
         }
@@ -45,6 +72,7 @@ class ViewController: UIViewController {
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
+                updateFlipScoreLabel()
                 button.setTitle(emoji(for: card),for: UIControl.State.normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             } else {
@@ -56,11 +84,31 @@ class ViewController: UIViewController {
     
     
     private func emoji(for card: Card) -> String {
-        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
-            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4random)
+        if emoji[card] == nil, emojiChoices.count > 0 {
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
+            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
             }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
+    
+    @IBAction func startNewGame(_ sender: Any) {
+        emojiChoices = "🐶🐣🐭🦊🐼🐹"
+        game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards)
+        game.calculateScore = 0
+        flipCount = 0
+        updateViewFromModel()
+        updateFlipScoreLabel()
+    }
+    
+    @IBAction func shuffleCards(_ sender: Any) {
+        game.shuffleCards()
+        updateViewFromModel()
+    }
+    
+    @IBAction func getClue(_ sender: Any) {
+        
+    }
+        
 }
     
 extension Int {
