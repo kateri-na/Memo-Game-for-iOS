@@ -10,6 +10,7 @@ import Foundation
 struct Consentration {
     
     private (set) var cards = [Card]()
+    private (set) var usedClue = false;
     
     public var calculateScore = 0
     
@@ -26,6 +27,9 @@ struct Consentration {
         }
     }
     
+    mutating func useClue() {
+        usedClue = true
+    }
     mutating func chooseCard(at index: Int){
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {

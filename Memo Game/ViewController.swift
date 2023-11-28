@@ -82,7 +82,16 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    private func updateClueView(){
+        for index in cardButtons.indices {
+            let button = cardButtons[index]
+            let card = game.cards[index]
+            if !card.isMatched {
+                button.setTitle(emoji(for: card),for: UIControl.State.normal)
+                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            }
+        }
+    }
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
@@ -106,7 +115,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func getClue(_ sender: Any) {
-        
+        if !game.usedClue {
+            game.useClue()
+            updateClueView()
+            _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false){
+                timer in self.updateViewFromModel()
+            }
+        }
     }
         
 }
