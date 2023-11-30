@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     private func updateFlipScoreLabel(){
         let attributes: [NSAttributedString.Key: Any] = [
             .strokeWidth: 5.0,
-            .strokeColor: UIColor.magenta
+            .strokeColor: UIColor.purple
         ]
         let attributedString = NSAttributedString(string: "Score: \(game.calculateScore)", attributes: attributes)
         flipScore.attributedText = attributedString

@@ -15,6 +15,7 @@
 		C4DD3A6A2AB177960021B2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DD3A682AB177960021B2CE /* Main.storyboard */; };
 		C4DD3A6C2AB177970021B2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4DD3A6B2AB177970021B2CE /* Assets.xcassets */; };
 		C4DD3A6F2AB177970021B2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4DD3A6D2AB177970021B2CE /* LaunchScreen.storyboard */; };
+		C4E016A52B163E4D000B5FEB /* ViewAndDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E016A42B163E4D000B5FEB /* ViewAndDifficultyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C4DD3A6B2AB177970021B2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4DD3A6E2AB177970021B2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4DD3A702AB177970021B2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4E016A42B163E4D000B5FEB /* ViewAndDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAndDifficultyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				C43AA7432ABD731C0010CB8F /* Consentration.swift */,
 				C43AA7462ABD74480010CB8F /* Card.swift */,
 				C4DD3A682AB177960021B2CE /* Main.storyboard */,
+				C4E016A42B163E4D000B5FEB /* ViewAndDifficultyViewController.swift */,
 				C4DD3A702AB177970021B2CE /* Info.plist */,
 			);
 			path = "Memo Game";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E016A52B163E4D000B5FEB /* ViewAndDifficultyViewController.swift in Sources */,
 				C4DD3A672AB177960021B2CE /* ViewController.swift in Sources */,
 				C43AA7442ABD731C0010CB8F /* Consentration.swift in Sources */,
 				C43AA7472ABD74480010CB8F /* Card.swift in Sources */,

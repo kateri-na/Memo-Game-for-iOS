@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MwM-Aa-NKp">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Memo_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Memo_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd9-14-MCN">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -93,7 +93,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adq-uo-dhH">
                                                 <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -104,7 +104,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn1-cU-Jtj">
                                                 <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -120,7 +120,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-Ot-0NL">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -131,7 +131,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RF-vL-bfa">
                                                 <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -142,7 +142,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-Z5-bt8">
                                                 <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -158,7 +158,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uG-u0-LNM">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -169,7 +169,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-aY-dqF">
                                                 <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -180,7 +180,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxe-nZ-Mos">
                                                 <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -196,7 +196,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-3T-C6X">
                                                 <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -207,7 +207,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIB-94-C5b">
                                                 <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -218,7 +218,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3K-Ut-oBh">
                                                 <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" red="0.55866432190000004" green="0.35285240410000002" blue="0.96962648630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" systemColor="systemPurpleColor"/>
@@ -266,10 +266,84 @@
             </objects>
             <point key="canvasLocation" x="-178.2608695652174" y="43.206521739130437"/>
         </scene>
+        <!--View And Difficulty View Controller-->
+        <scene sceneID="LxX-Nj-T4m">
+            <objects>
+                <viewController storyboardIdentifier="ViewAndDifficultyViewController" id="MwM-Aa-NKp" customClass="ViewAndDifficultyViewController" customModule="Memo_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="89i-w6-SNW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cZ-KY-W3H">
+                                <rect key="frame" x="60" y="663" width="294" height="53"/>
+                                <color key="backgroundColor" red="1" green="0.62697851337088828" blue="0.63273931721784316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title=" Start ">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowCards:" destination="MwM-Aa-NKp" eventType="touchUpInside" id="Jez-vf-Nef"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgM-40-wdg">
+                                <rect key="frame" x="158" y="40" width="98" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xF-t6-h7B">
+                                <rect key="frame" x="145.66666666666666" y="332" width="122.99999999999997" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-39-HvV">
+                                <rect key="frame" x="36" y="84" width="342" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="P7J-sV-s9Y"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb1-JY-SQp">
+                                <rect key="frame" x="47" y="376" width="320" height="279"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JNg-Bi-Ezh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qb1-JY-SQp" firstAttribute="top" secondItem="6xF-t6-h7B" secondAttribute="bottom" constant="8" symbolic="YES" id="0hr-fF-VBt"/>
+                            <constraint firstItem="0cZ-KY-W3H" firstAttribute="centerX" secondItem="JNg-Bi-Ezh" secondAttribute="centerX" id="4RF-Rx-Xfn"/>
+                            <constraint firstItem="0cZ-KY-W3H" firstAttribute="leading" secondItem="JNg-Bi-Ezh" secondAttribute="leading" constant="60" id="5PE-GP-TXY"/>
+                            <constraint firstItem="JNg-Bi-Ezh" firstAttribute="trailing" secondItem="0cZ-KY-W3H" secondAttribute="trailing" constant="60" id="I3z-8l-K7J"/>
+                            <constraint firstItem="qb1-JY-SQp" firstAttribute="centerX" secondItem="JNg-Bi-Ezh" secondAttribute="centerX" id="PeA-sR-Ltl"/>
+                            <constraint firstItem="dgM-40-wdg" firstAttribute="centerX" secondItem="JNg-Bi-Ezh" secondAttribute="centerX" id="U7k-vn-KsX"/>
+                            <constraint firstItem="0cZ-KY-W3H" firstAttribute="top" secondItem="qb1-JY-SQp" secondAttribute="bottom" constant="8" symbolic="YES" id="eTr-t7-Dmj"/>
+                            <constraint firstItem="0t9-39-HvV" firstAttribute="centerX" secondItem="dgM-40-wdg" secondAttribute="centerX" id="gYl-oE-64j"/>
+                            <constraint firstItem="6xF-t6-h7B" firstAttribute="centerX" secondItem="JNg-Bi-Ezh" secondAttribute="centerX" id="ggr-Y0-cDL"/>
+                            <constraint firstItem="0t9-39-HvV" firstAttribute="top" secondItem="dgM-40-wdg" secondAttribute="bottom" constant="8" symbolic="YES" id="mD4-2z-MWb"/>
+                            <constraint firstItem="6xF-t6-h7B" firstAttribute="top" secondItem="0t9-39-HvV" secondAttribute="bottom" constant="8" symbolic="YES" id="myx-Zw-BTa"/>
+                            <constraint firstItem="dgM-40-wdg" firstAttribute="top" secondItem="JNg-Bi-Ezh" secondAttribute="top" constant="40" id="o4b-bR-wF4"/>
+                            <constraint firstItem="JNg-Bi-Ezh" firstAttribute="bottom" secondItem="0cZ-KY-W3H" secondAttribute="bottom" constant="20" id="t2K-ZG-sz8"/>
+                            <constraint firstItem="0t9-39-HvV" firstAttribute="leading" secondItem="JNg-Bi-Ezh" secondAttribute="leading" constant="36" id="xHN-mz-EF0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ChooseDifficultyPickerView" destination="qb1-JY-SQp" id="Sbh-7m-RgV"/>
+                        <outlet property="ChooseThemePickerView" destination="0t9-39-HvV" id="YRf-dv-aO7"/>
+                        <outlet property="DifficultyLabel" destination="6xF-t6-h7B" id="NiH-q0-D6g"/>
+                        <outlet property="ThemeLabel" destination="dgM-40-wdg" id="mTy-gS-5PJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOF-Eb-MyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569.56521739130437" y="42.391304347826093"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
