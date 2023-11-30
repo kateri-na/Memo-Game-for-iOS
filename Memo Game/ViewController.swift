@@ -13,26 +13,17 @@ class ViewController: UIViewController {
     
     private (set) var flipCount = 0 {
         didSet{
-            updateFlipCountLabel()
+            updateLabel(label: flipCountLabel, text: "Flips: ", number: flipCount)
         }
     }
     
-    private func updateFlipCountLabel () {
+    private func updateLabel(label: UILabel, text: String, number: Int){
         let attributes: [NSAttributedString.Key: Any] = [
             .strokeWidth: 5.0,
             .strokeColor: UIColor.purple
         ]
-        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
-        flipCountLabel.attributedText = attributedString
-    }
-    
-    private func updateFlipScoreLabel(){
-        let attributes: [NSAttributedString.Key: Any] = [
-            .strokeWidth: 5.0,
-            .strokeColor: UIColor.purple
-        ]
-        let attributedString = NSAttributedString(string: "Score: \(game.calculateScore)", attributes: attributes)
-        flipScore.attributedText = attributedString
+        let attributedString = NSAttributedString(string: "\(text) \(number)", attributes: attributes)
+        label.attributedText = attributedString
     }
     
     var numberOfPairesOfCards: Int {
@@ -43,13 +34,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var flipCountLabel: UILabel! {
         didSet {
-            updateFlipCountLabel()
+            updateLabel(label: flipCountLabel, text: "Flips: ", number: flipCount)
         }
     }
     
     @IBOutlet weak var flipScore: UILabel!{
         didSet {
-            updateFlipScoreLabel()
+            updateLabel(label: flipScore, text: "Score: ", number: game.calculateScore)
         }
     }
     
@@ -72,7 +63,7 @@ class ViewController: UIViewController {
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
-                updateFlipScoreLabel()
+                updateLabel(label: flipScore, text: "Score: ", number: game.calculateScore)
                 button.setTitle(emoji(for: card),for: UIControl.State.normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             } else {
@@ -106,7 +97,7 @@ class ViewController: UIViewController {
         game.calculateScore = 0
         flipCount = 0
         updateViewFromModel()
-        updateFlipScoreLabel()
+        updateLabel(label: flipScore, text: "Score: ", number: game.calculateScore)
     }
     
     @IBAction func shuffleCards(_ sender: Any) {
