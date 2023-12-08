@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewAndDifficultyViewController: UIViewController {
-  
+      
     @IBOutlet weak var ThemeLabel: UILabel!{
         didSet{
             UpdateLabel(label: ThemeLabel, text: "Theme:")
@@ -30,7 +30,23 @@ class ViewAndDifficultyViewController: UIViewController {
         label.attributedText = attributedString
     }
     
-    let Theme = ["Animals", "Flags", "Food", "Random"]
+    var choosenTheme: String = "🐶🐣🐭🦊🐼🐹"
+
+    let Theme = [
+        "Animals", "Flags", "Food", "Random"
+    ]
+    
+    let Themes = [
+        "Animals" : "🐶🐣🐭🦊🐼🐹",
+        "Flags" : "🇹🇴🇫🇮🇬🇫🇺🇬🇨🇫🇯🇵",
+        "Food" : "🍙🍡🍇🥥🧀🥟",
+    ]
+    
+    private func RandomTheme() -> String{
+        let key: String = Themes.keys.randomElement()!
+        return Themes[key]!
+    }
+    
     let Difficulty = ["8 cards", "12 cards", "24 cards"]
     
     @IBOutlet weak var ChooseThemePickerView: UIPickerView!
@@ -48,11 +64,13 @@ class ViewAndDifficultyViewController: UIViewController {
         ChooseThemePickerView.tag = 1
         ChooseDifficultyPickerView.tag = 2
     }
-    
-    @IBAction func ShowCards(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "ViewController")
-        self.present(viewController, animated: false, completion: nil)
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "Get Info" {
+            if let cvc = segue.destination as? ViewController {
+                cvc.theme = choosenTheme
+            }
+        }
     }
 }
 
@@ -80,6 +98,21 @@ extension ViewAndDifficultyViewController : UIPickerViewDelegate, UIPickerViewDa
             return Difficulty[row]
         default:
             return "?"
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView.tag {
+        case 1:
+            if Theme[row] == "Random" {
+                choosenTheme = RandomTheme()
+            }
+            else {
+                choosenTheme = Themes[Theme[row]] ?? "?"
+            }
+        case 2:
+            print(Difficulty[row])
+        default:
+            print("?")
         }
     }
 }

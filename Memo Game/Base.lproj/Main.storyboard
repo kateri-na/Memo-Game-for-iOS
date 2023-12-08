@@ -14,11 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Memo_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="igd-5r-wuK">
-                                <rect key="frame" x="110.33333333333333" y="662.66666666666663" width="193.33333333333337" height="31.333333333333371"/>
+                                <rect key="frame" x="110.33333333333333" y="642.66666666666663" width="193.33333333333337" height="31.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-Tf-c4N">
                                         <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="31.333333333333332"/>
@@ -37,7 +37,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="45l-ZD-0M9">
-                                <rect key="frame" x="20.666666666666657" y="694" width="373" height="42"/>
+                                <rect key="frame" x="20.666666666666657" y="674" width="373" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sr-Gl-URy">
                                         <rect key="frame" x="0.0" y="0.0" width="119" height="42"/>
@@ -245,6 +245,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VEN-CW-9aY" secondAttribute="trailing" constant="20" id="xZW-1W-wfd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="U3G-eV-LeO"/>
                     <connections>
                         <outlet property="flipCountLabel" destination="U1L-Tf-c4N" id="dNs-5q-s65"/>
                         <outlet property="flipScore" destination="mPm-1Z-TPp" id="A9n-4h-hf2"/>
@@ -282,7 +283,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="ShowCards:" destination="MwM-Aa-NKp" eventType="touchUpInside" id="Jez-vf-Nef"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Get Info" id="M2U-ZN-J8e"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgM-40-wdg">

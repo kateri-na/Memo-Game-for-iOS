@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     private lazy var game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards)
     
+    
     private (set) var flipCount = 0 {
         didSet{
             updateLabel(label: flipCountLabel, text: "Flips: ", number: flipCount)
@@ -45,8 +46,15 @@ class ViewController: UIViewController {
     }
     
     private var emojiChoices = "🐶🐣🐭🦊🐼🐹"
-    
     private var emoji = [Card: String] ()
+
+    var theme: String? {
+        didSet {
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
         
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount+=1
@@ -59,6 +67,7 @@ class ViewController: UIViewController {
     }
 
     private func updateViewFromModel() {
+        if cardButtons != nil {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -70,6 +79,7 @@ class ViewController: UIViewController {
                 button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
             }
+        }
         }
     }
     
