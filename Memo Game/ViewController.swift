@@ -9,8 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards)
+    private lazy var game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards, numberOfCards: cardButtons.count)
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        for index in DisplayedNumberOfCards..<cardButtons.count {
+            cardButtons[index].isHidden = true
+        }
+    }
     
     private (set) var flipCount = 0 {
         didSet{
@@ -28,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     var numberOfPairesOfCards: Int {
-            return (cardButtons.count + 1) / 2
+        return (DisplayedNumberOfCards + 1) / 2
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -45,13 +51,22 @@ class ViewController: UIViewController {
         }
     }
     
-    private var emojiChoices = "🐶🐣🐭🦊🐼🐹"
+    private var emojiChoices = ""
     private var emoji = [Card: String] ()
 
     var theme: String? {
         didSet {
             emojiChoices = theme ?? ""
             emoji = [:]
+            updateViewFromModel()
+        }
+    }
+    
+    private var DisplayedNumberOfCards: Int = 24
+    
+    var difficulty:Int = 24 {
+        didSet{
+            DisplayedNumberOfCards = difficulty
             updateViewFromModel()
         }
     }
@@ -102,8 +117,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startNewGame(_ sender: Any) {
-        emojiChoices = "🐶🐣🐭🦊🐼🐹"
-        game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards)
+        emojiChoices = theme ?? "?"
+        game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards, numberOfCards: cardButtons.count)
         game.calculateScore = 0
         flipCount = 0
         updateViewFromModel()
@@ -111,7 +126,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func shuffleCards(_ sender: Any) {
-        game.shuffleCards()
+        game.shuffleCards(numberOfDisplayedPairs: numberOfPairesOfCards)
         updateViewFromModel()
     }
     

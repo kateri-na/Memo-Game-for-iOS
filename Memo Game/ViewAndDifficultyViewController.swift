@@ -30,25 +30,32 @@ class ViewAndDifficultyViewController: UIViewController {
         label.attributedText = attributedString
     }
     
-    var choosenTheme: String = "🐶🐣🐭🦊🐼🐹"
+    var choosenTheme: String = "🐶🐣🐭🦊🐼🐹🐸🐻🐰🦁🐮🐷"
+    var choosenDifficulty: Int = 8
 
     let Theme = [
         "Animals", "Flags", "Food", "Random"
     ]
     
+    let Difficulty = ["8 cards", "12 cards", "24 cards"]
+    
     let Themes = [
-        "Animals" : "🐶🐣🐭🦊🐼🐹",
-        "Flags" : "🇹🇴🇫🇮🇬🇫🇺🇬🇨🇫🇯🇵",
-        "Food" : "🍙🍡🍇🥥🧀🥟",
+        "Animals" : "🐶🐣🐭🦊🐼🐹🐸🐻🐰🦁🐮🐷",
+        "Flags" : "🇹🇴🇫🇮🇬🇫🇺🇬🇨🇫🇯🇵🇬🇧🇹🇱🇻🇮🇱🇧🇷🇪🇸🇿",
+        "Food" : "🍙🍡🍇🥥🧀🥟🌮🍱🥘🥗🥦🥞",
+    ]
+    
+    let Diffuculties = [
+        "8 cards" : 8,
+        "12 cards" : 12,
+        "24 cards" : 24,
     ]
     
     private func RandomTheme() -> String{
         let key: String = Themes.keys.randomElement()!
         return Themes[key]!
     }
-    
-    let Difficulty = ["8 cards", "12 cards", "24 cards"]
-    
+        
     @IBOutlet weak var ChooseThemePickerView: UIPickerView!
     
     @IBOutlet weak var ChooseDifficultyPickerView: UIPickerView!
@@ -69,6 +76,7 @@ class ViewAndDifficultyViewController: UIViewController {
         if segue.identifier == "Get Info" {
             if let cvc = segue.destination as? ViewController {
                 cvc.theme = choosenTheme
+                cvc.difficulty = choosenDifficulty
             }
         }
     }
@@ -110,7 +118,7 @@ extension ViewAndDifficultyViewController : UIPickerViewDelegate, UIPickerViewDa
                 choosenTheme = Themes[Theme[row]] ?? "?"
             }
         case 2:
-            print(Difficulty[row])
+            choosenDifficulty = Diffuculties[Difficulty[row]] ?? 0
         default:
             print("?")
         }
