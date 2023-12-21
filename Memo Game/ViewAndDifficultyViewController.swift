@@ -30,7 +30,8 @@ class ViewAndDifficultyViewController: UIViewController {
         label.attributedText = attributedString
     }
     
-    var choosenTheme: String = "🐶🐣🐭🦊🐼🐹🐸🐻🐰🦁🐮🐷"
+    var choosenTheme: (String, UIColor, UIColor) = ("🐶🐣🐭🦊🐼🐹🐸🐻🐰🦁🐮🐷", .yellow, .green)
+    
     var choosenDifficulty: Int = 8
 
     let Theme = [
@@ -40,9 +41,9 @@ class ViewAndDifficultyViewController: UIViewController {
     let Difficulty = ["8 cards", "12 cards", "24 cards"]
     
     let Themes = [
-        "Animals" : "🐶🐣🐭🦊🐼🐹🐸🐻🐰🦁🐮🐷",
-        "Flags" : "🇹🇴🇫🇮🇬🇫🇺🇬🇨🇫🇯🇵🇬🇧🇹🇱🇻🇮🇱🇧🇷🇪🇸🇿",
-        "Food" : "🍙🍡🍇🥥🧀🥟🌮🍱🥘🥗🥦🥞",
+        "Animals" : ("🐶🐣🐭🦊🐼🐹🐸🐻🐰🦁🐮🐷", UIColor.yellow, UIColor.green),
+        "Flags" : ("🇹🇴🇫🇮🇬🇫🇺🇬🇨🇫🇯🇵🇬🇧🇹🇱🇻🇮🇱🇧🇷🇪🇸🇿", UIColor.black, UIColor.cyan),
+        "Food" : ("🍙🍡🍇🥥🧀🥟🌮🍱🥘🥗🥦🥞", UIColor.red, UIColor.blue)
     ]
     
     let Diffuculties = [
@@ -51,7 +52,7 @@ class ViewAndDifficultyViewController: UIViewController {
         "24 cards" : 24,
     ]
     
-    private func RandomTheme() -> String{
+    private func RandomTheme() -> (String, UIColor, UIColor){
         let key: String = Themes.keys.randomElement()!
         return Themes[key]!
     }
@@ -115,7 +116,7 @@ extension ViewAndDifficultyViewController : UIPickerViewDelegate, UIPickerViewDa
                 choosenTheme = RandomTheme()
             }
             else {
-                choosenTheme = Themes[Theme[row]] ?? "?"
+                choosenTheme = Themes[Theme[row]]!
             }
         case 2:
             choosenDifficulty = Diffuculties[Difficulty[row]] ?? 0

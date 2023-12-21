@@ -48,26 +48,20 @@ struct Consentration {
         }
     }
     
-    init(numberOfPairsOfCards: Int, numberOfCards: Int) {
+    init(numberOfPairsOfCards: Int, numberOfDisplayedCards: Int) {
         assert(numberOfPairsOfCards > 0, "Consentration.init(\(numberOfPairsOfCards)): must at least one pair of cards")
-        let AllNumberOfPairsOfCards: Int = (numberOfCards+1) / 2
-        for _ in 1...AllNumberOfPairsOfCards {
+        for _ in 1...numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]
         }
-        for index in numberOfPairsOfCards*2..<numberOfCards {
-            cards[index].isMatched = true
-        }
-        shuffleCards(numberOfDisplayedPairs: numberOfPairsOfCards)
+        shuffleCards(numberOfCards: numberOfDisplayedCards)
     }
     
-    mutating func shuffleCards(numberOfDisplayedPairs: Int) {
-        let numberOfDisplayedCards: Int = numberOfDisplayedPairs * 2
-        for index in 0..<numberOfDisplayedCards{
-            let rndIndex = Int(arc4random_uniform(UInt32(numberOfDisplayedCards - index))) + index
+    mutating func shuffleCards(numberOfCards: Int) {
+        for index in 0..<numberOfCards{
+            let rndIndex = Int(arc4random_uniform(UInt32(numberOfCards - index))) + index
             cards.swapAt(index, rndIndex)
         }
-//        cards.shuffle()
     }
 }
 

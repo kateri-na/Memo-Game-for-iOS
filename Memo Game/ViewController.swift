@@ -9,13 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards, numberOfCards: cardButtons.count)
+    private lazy var game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards, numberOfDisplayedCards: DisplayedNumberOfCards)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for index in 0..<DisplayedNumberOfCards{
+            cardButtons[index].backgroundColor = themeCardsColor
+        }
         for index in DisplayedNumberOfCards..<cardButtons.count {
             cardButtons[index].isHidden = true
         }
+        self.view.backgroundColor = themeBackGroundColor
     }
     
     private (set) var flipCount = 0 {
@@ -34,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     var numberOfPairesOfCards: Int {
-        return (DisplayedNumberOfCards + 1) / 2
+        return (cardButtons.count + 1) / 2
     }
     
     @IBOutlet private var cardButtons: [UIButton]!
@@ -50,14 +54,18 @@ class ViewController: UIViewController {
             updateLabel(label: flipScore, text: "Score: ", number: game.calculateScore)
         }
     }
+    private var themeBackGroundColor: UIColor?
+    private var themeCardsColor: UIColor?
     
     private var emojiChoices = ""
     private var emoji = [Card: String] ()
 
-    var theme: String? {
+    var theme: (String?, UIColor?, UIColor?) {
         didSet {
-            emojiChoices = theme ?? ""
+            emojiChoices = theme.0 ?? ""
             emoji = [:]
+            themeBackGroundColor = theme.1
+            themeCardsColor = theme.2
             updateViewFromModel()
         }
     }
@@ -92,7 +100,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             } else {
                 button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : themeCardsColor
             }
         }
         }
@@ -117,8 +125,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startNewGame(_ sender: Any) {
-        emojiChoices = theme ?? "?"
-        game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards, numberOfCards: cardButtons.count)
+        emojiChoices = theme.0 ?? "?"
+        game = Consentration(numberOfPairsOfCards: numberOfPairesOfCards, numberOfDisplayedCards: DisplayedNumberOfCards)
         game.calculateScore = 0
         flipCount = 0
         updateViewFromModel()
@@ -126,7 +134,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func shuffleCards(_ sender: Any) {
-        game.shuffleCards(numberOfDisplayedPairs: numberOfPairesOfCards)
+        game.shuffleCards(numberOfCards: DisplayedNumberOfCards)
         updateViewFromModel()
     }
     
@@ -139,7 +147,6 @@ class ViewController: UIViewController {
             }
         }
     }
-        
 }
     
 extension Int {
